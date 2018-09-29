@@ -20,13 +20,19 @@ public class Grass extends Block {
 		if (up != null) {
 			tt++;
 			if (tt > ttm) {
-				world.set(x, y, new Tile(Blocks.getBlockByID("brickcraft:dirt"), world));
+				if (!up.getBlock().canPassThrough()) {
+					world.set(x, y, new Tile(Blocks.getBlockByID("brickcraft:dirt"), world));
+				}
 			}
 		}
 	}
 	
 	public void update(World world, int x, int y) {
 		
+	}
+	
+	public String getDroppingBlock() {
+		return "brickcraft:dirt";
 	}
 	
 	public boolean hasRandomTicking() {

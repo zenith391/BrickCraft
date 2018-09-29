@@ -8,7 +8,7 @@ import org.jhggl.objects.ProgressBar;
 import org.lggl.graphics.Texture;
 import org.lggl.graphics.TextureLoader;
 import org.lggl.graphics.Window;
-import org.lggl.graphics.objects.Sprite;
+import org.lggl.objects.Sprite;
 
 public class Loading extends GUI {
 	
@@ -23,11 +23,14 @@ public class Loading extends GUI {
 		Texture mojang = null;
 		try {
 			mojang = TextureLoader.getTexture(new File("assets/main_menu/mojang.png")); // Assets are'nt loaded, so manually loading.
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		image = new Sprite(mojang);
-		image.setSize(mojang.getWidth() * 2, mojang.getHeight() * 2);
+		if (mojang != null)
+			image.setSize(mojang.getWidth() * 2, mojang.getHeight() * 2);
+		else
+			image.setSize(512, 512);
 		add(image);
 		bar = new ProgressBar();
 		bar.setSize(310, 50);

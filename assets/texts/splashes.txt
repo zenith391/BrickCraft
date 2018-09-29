@@ -6,7 +6,7 @@ More polygons!
 Sexy!
 Limited edition!
 Flashing letters!
-Made by Notch!
+Made by zenith391, based on work of Notch!
 It's here!
 Best in class!
 It's finished!
@@ -14,16 +14,17 @@ Kind of dragon free!
 Excitement!
 More than 500 sold!
 One of a kind!
-Heaps of hits on YouTube!
-Indev!
+No heaps of hits on YouTube!
+Indev 0.25!
 Spiders everywhere!
 Check it out!
+/say Display all splashes! (this will work)
 Holy cow, man!
 It's a game!
-Made in Sweden!
-Uses LWJGL!
+Made in France!
+Uses LGGL!
 Reticulating splines!
-Minecraft!
+BrickCraft!
 Yaaay!
 Singleplayer!
 Keyboard compatible!
@@ -43,11 +44,11 @@ Classy!
 Wow!
 Not on steam!
 Oh man!
-Awesome community!
+Awesome community, made by community!
 Pixels!
 Teetsuuuuoooo!
 Kaaneeeedaaaa!
-Now with difficulty!
+Now without mobs!
 Enhanced!
 90% bug free!
 Pretty!
@@ -58,21 +59,21 @@ Free dental!
 Ask your doctor!
 Minors welcome!
 Cloud computing!
-Legal in Finland!
+Legal nowhere!
 Hard to label!
 Technically good!
 Bringing home the bacon!
 Indie!
 GOTY!
-Ceci n'est pas une title screen!
+Ceci n'est pas un splash, oh wait!
 Euclidian!
-Now in 3D!
+Now in 1D!
 Inspirational!
 Herregud!
 Complex cellular automata!
 Yes, sir!
 Played by cowboys!
-OpenGL 2.1 (if supported)!
+Swing (even on thoses 95' machines that don't even support java)!
 Thousands of colors!
 Try it!
 Age of Wonders is better!
@@ -86,8 +87,8 @@ Bring it on!
 Random splash!
 Call your mother!
 Monster infighting!
-Loved by millions!
-Ultimate edition!
+Loved by 1!
+Community edition!
 Freaky!
 You've got a brand new key!
 Water proof!
@@ -126,17 +127,17 @@ Seecret Friday update!
 Reference implementation!
 Lewd with two dudes with food!
 Kiss the sky!
-20 GOTO 10!
+.kill()!
 Verlet intregration!
 Peter Griffin!
 Do not distribute!
 Cogito ergo sum!
-4815162342 lines of code!
+3245 lines of code!
 A skeleton popped out!
-The Work of Notch!
+The Work of _Zen1th_!
 The sum of its parts!
 BTAF used to be good!
-I miss ADOM!
+I miss ASDF!
 umop-apisdn!
 OICU812!
 Bring me Ray Cokes!
@@ -153,6 +154,7 @@ Representing Edsbyn!
 Matt Damon!
 Supercalifragilisticexpialidocious!
 Consummate V's!
+WALLLAAHHH!
 Cow Tools!
 Double buffered!
 Fan fiction!
@@ -175,7 +177,7 @@ Woo, worldofminecraft!
 Woo, reddit!
 Woo, 2pp!
 Google anlyticsed!
-Now supports åäö!
+Supports åäö since long!
 Give us Gordon!
 Tip your waiter!
 Very fun!
@@ -187,7 +189,6 @@ Omnipotent!
 Gasp!
 ...!
 Bees, bees, bees, bees!
-Jag känner en bot!
 This text is hard to read if you play the game at the default resolution, but at 1080p it's fine!
 Haha, LOL!
 Hampsterdance!
@@ -243,6 +244,7 @@ Also try World of Goo!
 Also try Limbo!
 Also try Pixeljunk Shooter!
 Also try Braid!
+Also try Minecraft!
 That's super!
 Bread is pain!
 Read more books!
@@ -274,7 +276,13 @@ PC gaming since 1873!
 Ghoughpteighbteau tchoghs!
 Déjà vu!
 Déjà vu!
+Déja vu?
+France = Best!
 Got your nose!
+Look out he's got a nose!
+Is this you? Hello!
+Here comes the bricks!
+I like minecarts!
 Haley loves Elan!
 Afraid of the big, black bat!
 Doesn't use the U-word!
@@ -298,8 +306,8 @@ I see your vocabulary has improved!
 Who put it there?
 You can't explain that!
 if not ok then return end
-§1C§2o§3l§4o§5r§6m§7a§8t§9i§ac
-§kFUNKY LOL
+Formatting codes are totally not supported x)
+Formatting codes are totally not supported x)
 Big Pointy Teeth!
 Bekarton guards the gate!
 Mmmph, mmph!
@@ -307,12 +315,14 @@ Don't feed avocados to parrots!
 Swords for everyone!
 Plz reply to my tweet!
 .party()!
+.meet("Donald Trump").canceledBy("Donald Trump", "at last minute");
+.feed(Code.class);
 Take her pillow!
 Put that cookie down!
 Pretty scary!
 I have a suggestion.
 Now with extra hugs!
-Now Java 8!
+Now Java 9 §4FORCED!
 Woah.
 HURNERJSGER?
 What's up, Doc?
@@ -331,7 +341,7 @@ Popping tags!
 Very influential in its circle!
 Now With Multiplayer!
 Rise from your grave!
-Warning! A huge battleship "STEVE" is approaching fast!
+Warning! A huge battleship "MICROCOPYRIGHT" is approaching fast!
 Blue warrior shot the food!
 Run, coward! I hunger!
 Flavor with no seasoning!
@@ -349,18 +359,19 @@ Take an eggbeater and beat it against a skillet!
 Make me a table, a funky table!
 Take the elevator to the mezzanine!
 Stop being reasonable, this is the Internet!
-/give @a hugs 64
+/give @a love 64
 This is good for Realms.
 Any computer is a laptop if you're brave enough!
 Do it all, everything!
 Where there is not light, there can spider!
-GNU Terry Pratchett
+Get Linux, games are faster and better!
 More Digital!
 doot doot
 Falling with style!
 There's no stopping the Trollmaso
 Throw yourself at the ground and miss
 Rule #1: it's never my fault
+Rule #2: MicroCopyRight's approaching? Don't kill me
 Replaced molten cheese with blood?
 Absolutely fixed relatively broken coordinates
 Boats FTW
@@ -369,6 +380,8 @@ Should not be played while driving
 You're going too fast!
 Don't feed chocolate to parrots!
 The true meaning of covfefe
+covfefe is the coffee !
+Even Thomas James Ridgewell don't know that!
 An illusion! What are you hiding?
 Something's not quite right...
 Thank you for the fish!

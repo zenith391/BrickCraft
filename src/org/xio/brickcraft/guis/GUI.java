@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import org.lggl.graphics.Window;
-import org.lggl.graphics.objects.Container;
+import org.lggl.objects.Container;
 
 public class GUI extends Container {
 

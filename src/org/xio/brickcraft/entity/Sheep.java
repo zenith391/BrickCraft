@@ -12,21 +12,21 @@ public class Sheep extends Entity {
 	private Texture left;
 	private Texture right;
 	
-	private int width = 32;
-	private int height = 32;
-	
 	public Sheep(World world) {
 		super(world);
 		left = AssetsManager.getTexture("textures/sheep-left", "png");
 		right = AssetsManager.getTexture("textures/sheep-right", "png");
 		orientation = 0;
+		width = 1.0f;
+		height = 1.0f;
 	}
 	
 	public void render(int x, int y, Graphics g) {
+		super.render(x, y, g);
 		if (orientation == 0) {
-			g.drawImage(left.getAWTImage(), x, y, width, height, null);
+			g.drawImage(left.getAWTImage(), x, y, (int) (width * 32), (int) (height * 32), null);
 		} else {
-			g.drawImage(right.getAWTImage(), x, y, width, height, null);
+			g.drawImage(right.getAWTImage(), x, y, (int) (width * 32), (int) (height * 32), null);
 		}
 	}
 

@@ -2,11 +2,12 @@ package org.xio.brickcraft;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 import org.jhggl.assets.AssetsManager;
 import org.lggl.graphics.Texture;
 import org.lggl.graphics.Window;
-import org.lggl.graphics.objects.GameObject;
+import org.lggl.objects.GameObject;
 import org.lggl.input.Mouse;
 import org.xio.brickcraft.entity.Entity;
 import org.xio.brickcraft.world.Chunk;
@@ -16,6 +17,8 @@ public class WorldRenderer extends GameObject {
 	private World world;
 	private Texture rain;
 	private int offsetRain;
+	private int mtfr;
+	private int tfr;
 
 	public World getWorld() {
 		return world;
@@ -29,6 +32,10 @@ public class WorldRenderer extends GameObject {
 		this.world = world;
 		rain = AssetsManager.getTexture("environment/rain");
 	}
+	
+	public WorldRenderer() {
+		this(null);
+	}
 
 	@Override
 	public void paint(Graphics g, Window source) {
@@ -41,8 +48,19 @@ public class WorldRenderer extends GameObject {
 			}
 			offsetRain += 20;
 		}
-		int cx = BrickCraft.getInstance().getCamera().getX();
-		int cy = BrickCraft.getInstance().getCamera().getY();
+		if (mtfr == 0) {
+			mtfr = new Random().nextInt(64000);
+		} else {
+			tfr++;
+		}
+		if (tfr >= mtfr) {
+			mtfr = 0;
+			tfr = 0;
+			world.setRaining(!world.isRaining());
+		}
+		int cx = BrickCraft.getInstance().getCamera().getX() - TileManager.TILE_WIDTH;
+		int cy = BrickCraft.getInstance().getCamera().getY() - TileManager.TILE_HEIGHT;
+		g.drawImage(AssetsManager.getTexture("environment/sun").getAWTImage(), 128, 128, 128, 128, null);
 		g.translate(-BrickCraft.getInstance().getCamera().getX(), -BrickCraft.getInstance().getCamera().getY());
 		for (Chunk ch : world.chunks) {
 			for (int x = 0; x < 16; x++) {
@@ -53,7 +71,7 @@ public class WorldRenderer extends GameObject {
 							int x0 = (c * (TileManager.TILE_WIDTH * 16))
 									+ (x * TileManager.TILE_WIDTH);
 							int y0 = (y * TileManager.TILE_HEIGHT);
-							if (x0 > cx && x0 < cx + 1280 && y0 > cy && y0 < cy + 720) {
+							if (x0 > cx && x0 < cx + 1300 && y0 > cy && y0 < cy + 800) {
 								t.render(x0, y0, g);
 							}
 							t.update(x + (c * 16), y);

@@ -15,6 +15,9 @@ public class TileManager {
 	static {
 		textures.put("grass", AssetsManager.getTexture("textures/grass"));
 		textures.put("dirt", AssetsManager.getTexture("textures/dirt"));
+		textures.put("stone", AssetsManager.getTexture("textures/stone"));
+		textures.put("oak", AssetsManager.getTexture("textures/oak_log"));
+		textures.put("leaf", AssetsManager.getTexture("textures/oak_leaves"));
 	}
 
 }

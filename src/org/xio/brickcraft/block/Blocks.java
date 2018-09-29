@@ -14,5 +14,14 @@ public class Blocks {
 	public static Block getBlockByID(String id) {
 		return blockRegister.get(id);
 	}
+	
+	public static String getIDByBlock(Block block) {
+		for (String key : blockRegister.keySet()) {
+			if (blockRegister.get(key).equals(block)) {
+				return key;
+			}
+		}
+		return null;
+	}
 
 }
