@@ -1,7 +1,7 @@
 package org.xio.brickcraft.entity;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import org.powerhigh.utils.Color;
+import org.powerhigh.graphics.*;
 import java.util.ArrayList;
 
 import org.xio.brickcraft.Filter;
@@ -73,10 +73,10 @@ public class Entity {
 		return cond1 && cond2;
 	}
 
-	public void render(int x, int y, Graphics g) { // Render using Screen-coordinates
+	public void render(int x, int y, Drawer g) { // Render using Screen-coordinates
 		if (DRAW_HITBOXES) {
 			g.setColor(Color.BLUE);
-			g.drawRect(x, y, (int) (width * TileManager.TILE_WIDTH), (int) (height * TileManager.TILE_HEIGHT));
+			//g.drawRect(x, y, (int) (width * TileManager.TILE_WIDTH), (int) (height * TileManager.TILE_HEIGHT));
 			g.setColor(Color.RED);
 			g.fillRect(x, y, 2, 2);
 		}

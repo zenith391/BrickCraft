@@ -7,6 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/JHGGL/bin"/>
-	<classpathentry kind="lib" path="C:/Users/UserPC/Desktop/Randy RAMDE/Java/LGGL/lggl-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/UserPC/Desktop/Randy RAMDE/Java/LGGL/powerhigh/powerhigh-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/UserPC/Desktop/Randy RAMDE/Java/LGGL/powerhigh/powerhigh-swing.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

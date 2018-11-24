@@ -1,22 +1,23 @@
 package org.xio.brickcraft;
 
-import java.awt.Color;
+import org.powerhigh.utils.Color;
 import java.io.File;
 import java.io.IOException;
 
 import org.jhggl.assets.AssetsManager;
-import org.lggl.SizedViewport;
-import org.lggl.audio.AISSound;
-import org.lggl.audio.Music;
-import org.lggl.audio.Sound;
-import org.lggl.audio.WavMusic;
-import org.lggl.game.SimpleGame;
-import org.lggl.graphics.Window;
-import org.lggl.objects.Text;
-import org.lggl.graphics.renderers.lightning.Lightning;
-import org.lggl.input.Keyboard;
-import org.lggl.input.Mouse;
-import org.lggl.utils.debug.DebugLogger;
+import org.powerhigh.SizedViewport;
+import org.powerhigh.swing.audio.WavSound;
+import org.powerhigh.audio.Music;
+import org.powerhigh.audio.Sound;
+import org.powerhigh.swing.audio.WavMusic;
+import org.powerhigh.game.SimpleGame;
+import org.powerhigh.graphics.Interface;
+import org.powerhigh.objects.Text;
+import org.powerhigh.graphics.renderers.lightning.Lightning;
+import org.powerhigh.input.AbstractKeyboard;
+import org.powerhigh.input.KeyCodes;
+import org.powerhigh.input.Mouse;
+import org.powerhigh.utils.debug.DebugLogger;
 import org.xio.brickcraft.block.Blocks;
 import org.xio.brickcraft.block.Dirt;
 import org.xio.brickcraft.block.Grass;
@@ -43,7 +44,7 @@ public class BrickCraft extends SimpleGame {
 	private Camera cam;
 	private Player player;
 	private Text debug;
-	public Window win;
+	public Interface win;
 	public boolean debugMode = false;
 	public boolean playing = false;
 	private GUI gui;
@@ -81,7 +82,7 @@ public class BrickCraft extends SimpleGame {
 
 	}
 
-	public void exit(Window win) {
+	public void exit(Interface win) {
 		try {
 //			PackOutputStream pos = new PackOutputStream(new DeflaterOutputStream(new FileOutputStream("default.pak")));
 //			pos.write(renderworld);
@@ -106,7 +107,7 @@ public class BrickCraft extends SimpleGame {
 		Blocks.register("brickcraft:water_source", new WaterSource());
 		Blocks.register("brickcraft:lava_source", new LavaSource());
 
-		win.setIcon(AssetsManager.getTexture("Icon").getAWTImage());
+		//win.setIcon(AssetsManager.getTexture("Icon"));
 		
 		win.setBackground(ColorUtils.hexColor("A52A2A"));
 		setGUI(new MainMenu());
@@ -116,11 +117,11 @@ public class BrickCraft extends SimpleGame {
 
 	public void music() {
 		try {
-			music = new WavMusic(new File("assets/sound/calm1.wav"));
-		} catch (IOException e) {
+			//music = new WavMusic(new File("assets/sound/calm1.wav"));
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		audio.playMusic(music);
+		//audio.playMusic(music);
 	}
 
 	public void gameInit() {
@@ -165,22 +166,22 @@ public class BrickCraft extends SimpleGame {
 	private Music music;
 
 	@Override
-	public void update(Window win, double delta) {
+	public void update(Interface win, double delta) {
 		debug.setText("FPS: " + win.getFPS());
 
 		//System.out.println(Mouse.isPressed());
-		Keyboard k = win.getKeyboard();
+		AbstractKeyboard k = win.getInput().getKeyboard();
 		
-		if (k.isKeyDown(Keyboard.KEY_F11)) {
-			win.setFullscreenWidth(1280);
-			win.setFullscreenHeight(720);
-			win.setFullscreen(!win.isFullscreen());
-			k.setKeyDown(Keyboard.KEY_F11, false);
+		if (k.isKeyDown(KeyCodes.KEY_F11)) {
+//			win.setFullscreenWidth(1280);
+//			win.setFullscreenHeight(720);
+//			win.setFullscreen(!win.isFullscreen());
+//			k.setKeyDown(Keyboard.KEY_F11, false);
 		}
 		
 		if (playing) {
 
-			if (k.isKeyDown(Keyboard.KEY_K)) {
+			if (k.isKeyDown(KeyCodes.KEY_K)) {
 				if (hud.slotID > 0) {
 					hud.slotID--;
 				}
@@ -190,7 +191,7 @@ public class BrickCraft extends SimpleGame {
 					e.printStackTrace();
 				}
 			}
-			if (k.isKeyDown(Keyboard.KEY_L)) {
+			if (k.isKeyDown(KeyCodes.KEY_L)) {
 				if (hud.slotID < 8) {
 					hud.slotID++;
 				}
@@ -255,7 +256,7 @@ public class BrickCraft extends SimpleGame {
 	}
 
 	@Override
-	public void init(Window win) {
+	public void init(Interface win) {
 		//((Lightning) Window.getRenderer()).setUsePostProcessing(false);
 		this.win = win;
 		win.setTitle("BrickCraft " + BrickCraft.VERSION);
@@ -284,6 +285,11 @@ public class BrickCraft extends SimpleGame {
 			}
 		}
 		instance.start();
+	}
+
+	@Override
+	public ImplementationSettings getImplementationSettings() {
+		return new ImplementationSettings(ImplementationSettings.Interface.SWING, ImplementationSettings.Audio.AWT);
 	}
 
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import org.lggl.utils.debug.DebugLogger;
+import org.powerhigh.utils.debug.DebugLogger;
 import org.xio.brickcraft.block.Block;
 import org.xio.brickcraft.block.Blocks;
 import org.xio.brickcraft.entity.Entity;

@@ -1,6 +1,6 @@
 package org.xio.brickcraft.item;
 
-import org.lggl.graphics.Texture;
+import org.powerhigh.graphics.Texture;
 import org.xio.brickcraft.block.Block;
 
 public class Item {

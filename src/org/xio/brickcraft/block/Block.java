@@ -1,9 +1,9 @@
 package org.xio.brickcraft.block;
 
-import java.awt.Graphics;
 import java.util.Properties;
 
-import org.lggl.graphics.Texture;
+import org.powerhigh.graphics.Drawer;
+import org.powerhigh.graphics.Texture;
 import org.xio.brickcraft.Tile;
 import org.xio.brickcraft.World;
 
@@ -24,7 +24,7 @@ public class Block {
 		return false;
 	}
 	
-	public void render(int x, int y, Graphics g) {
+	public void render(int x, int y, Drawer g) {
 		
 	}
 	

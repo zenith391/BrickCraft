@@ -3,7 +3,7 @@ package org.xio.brickcraft;
 import java.util.HashMap;
 
 import org.jhggl.assets.AssetsManager;
-import org.lggl.graphics.Texture;
+import org.powerhigh.graphics.Texture;
 
 public class TileManager {
 

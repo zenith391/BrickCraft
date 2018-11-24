@@ -1,6 +1,6 @@
 package org.xio.brickcraft.item;
 
-import java.awt.Graphics;
+import org.powerhigh.graphics.Drawer;
 
 import org.xio.brickcraft.Filter;
 import org.xio.brickcraft.IInventoryContainer;
@@ -54,9 +54,9 @@ public class ItemStack extends Entity {
 		}
 	}
 	
-	public void render(int x, int y, Graphics g) {
+	public void render(int x, int y, Drawer g) {
 		super.render(x, y, g);
-		g.drawImage(getItem().getTexture().getAWTImage(), x, y + floatingY, TileManager.TILE_WIDTH / 2, TileManager.TILE_HEIGHT / 2, null);
+		g.drawTexture(x, y + floatingY, TileManager.TILE_WIDTH / 2, TileManager.TILE_HEIGHT / 2, getItem().getTexture());
 		if (floatingY < -1) {
 			floatingState = true;
 		}

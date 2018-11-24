@@ -1,15 +1,15 @@
 package org.xio.brickcraft.guis;
 
-import java.awt.Color;
+import org.powerhigh.utils.Color;
 import java.awt.Font;
 import java.util.Random;
 
 import org.jhggl.assets.AssetsManager;
 import org.jhggl.assets.Resource;
-import org.lggl.graphics.Window;
-import org.lggl.objects.Button;
-import org.lggl.objects.Sprite;
-import org.lggl.objects.Text;
+import org.powerhigh.graphics.Interface;
+import org.powerhigh.objects.Button;
+import org.powerhigh.objects.Sprite;
+import org.powerhigh.objects.Text;
 import org.xio.brickcraft.BrickCraft;
 
 public class MainMenu extends GUI {
@@ -33,7 +33,7 @@ public class MainMenu extends GUI {
 		String[] splashs = splashes.getPlainContent().split("\n");
 		int sp = new Random().nextInt(splashs.length);
 		splash = new Text(splashs[sp]);
-		if (splashs[sp].equals("/say Display all splashes! (this will work)")) {
+		if (splash.getText().equals("/say Display all splashes! (this will work)")) {
 			allSplash = true;
 			// easter egg :D
 		}
@@ -52,13 +52,14 @@ public class MainMenu extends GUI {
 		title2.setX((1280 / 2) - 120);
 		title.setY(100);
 		splash.setY(150);
-		splash.setColor(Color.yellow);
+		splash.setColor(Color.YELLOW);
 		splash.setRotation(-120);
 		title2.setY(170);
 		b1.setY(400);
 		b1.setX((1280 / 2) - 125);
 		b2.setX((1280 / 2) - 125);
 		b2.setY(500);
+		this.setColor(Color.BLACK);
 		b2.setWidth(250);
 		b1.addAction(new Runnable() {
 
@@ -89,7 +90,7 @@ public class MainMenu extends GUI {
 		splash.setRotation(60);
 	}
 
-	public void update(Window win) {
+	public void update(Interface win) {
 		splash.setRotation(splash.getRotation() + 1);
 		splashSizeACC++;
 		if (allSplash) {

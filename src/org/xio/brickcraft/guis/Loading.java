@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import org.jhggl.assets.AssetsManager;
 import org.jhggl.objects.ProgressBar;
-import org.lggl.graphics.Texture;
-import org.lggl.graphics.TextureLoader;
-import org.lggl.graphics.Window;
-import org.lggl.objects.Sprite;
+import org.powerhigh.graphics.Texture;
+import org.powerhigh.graphics.TextureLoader;
+import org.powerhigh.graphics.Interface;
+import org.powerhigh.objects.Sprite;
 
 public class Loading extends GUI {
 	
@@ -22,7 +22,7 @@ public class Loading extends GUI {
 	private void initComponents() {
 		Texture mojang = null;
 		try {
-			mojang = TextureLoader.getTexture(new File("assets/main_menu/mojang.png")); // Assets are'nt loaded, so manually loading.
+			mojang = TextureLoader.getTexture("assets/main_menu/mojang.png"); // Assets are'nt loaded, so manually loading.
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -47,7 +47,7 @@ public class Loading extends GUI {
 		add(bar);
 	}
 	
-	public void update(Window win) {
+	public void update(Interface win) {
 		image.centerTo(win);
 		bar.centerTo(win);
 		bar.setY(bar.getY() + 125);

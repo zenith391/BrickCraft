@@ -1,6 +1,6 @@
 package org.xio.brickcraft;
 
-import org.lggl.utils.debug.DebugLogger;
+import org.powerhigh.utils.debug.DebugLogger;
 
 public class Debug {
 

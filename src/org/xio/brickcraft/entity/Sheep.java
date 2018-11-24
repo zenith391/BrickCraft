@@ -1,9 +1,8 @@
 package org.xio.brickcraft.entity;
 
-import java.awt.Graphics;
-
 import org.jhggl.assets.AssetsManager;
-import org.lggl.graphics.Texture;
+import org.powerhigh.graphics.Drawer;
+import org.powerhigh.graphics.Texture;
 import org.xio.brickcraft.World;
 
 public class Sheep extends Entity {
@@ -21,12 +20,12 @@ public class Sheep extends Entity {
 		height = 1.0f;
 	}
 	
-	public void render(int x, int y, Graphics g) {
+	public void render(int x, int y, Drawer g) {
 		super.render(x, y, g);
 		if (orientation == 0) {
-			g.drawImage(left.getAWTImage(), x, y, (int) (width * 32), (int) (height * 32), null);
+			g.drawTexture(x, y, (int) (width * 32), (int) (height * 32), left);
 		} else {
-			g.drawImage(right.getAWTImage(), x, y, (int) (width * 32), (int) (height * 32), null);
+			g.drawTexture(x, y, (int) (width * 32), (int) (height * 32), right);
 		}
 	}
 

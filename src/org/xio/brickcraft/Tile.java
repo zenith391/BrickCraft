@@ -5,7 +5,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 import org.jhggl.assets.AssetsManager;
-import org.lggl.graphics.Texture;
+import org.powerhigh.graphics.Drawer;
+import org.powerhigh.graphics.Texture;
 import org.xio.brickcraft.block.Block;
 import org.xio.brickcraft.block.Blocks;
 import org.xio.brickcraft.item.Item;
@@ -47,19 +48,19 @@ public class Tile implements Cloneable {
 		this(null, null);
 	}
 
-	public void render(int x, int y, Graphics g) {
+	public void render(int x, int y, Drawer g) {
 		if (block.haveSpecialRender()) {
 			block.render(x, y, g);
 		} else {
-			g.drawImage(block.getTexture().getAWTImage(), x, y, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT, null);
+			g.drawTexture(x, y, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT, block.getTexture());
 		}
 		postRender(x, y, g);
 	}
 
-	protected void postRender(int x, int y, Graphics g) {
+	protected void postRender(int x, int y, Drawer g) {
 		if (destroyStage != -1 && destroyStage < 10) {
 			Texture tex = AssetsManager.getTexture("textures/destroy_stage_" + destroyStage);
-			g.drawImage(tex.getAWTImage(), x, y, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT, null);
+			g.drawTexture(x, y, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT, tex);
 		}
 	}
 

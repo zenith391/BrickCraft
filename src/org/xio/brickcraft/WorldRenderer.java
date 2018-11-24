@@ -1,14 +1,14 @@
 package org.xio.brickcraft;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.util.Random;
 
 import org.jhggl.assets.AssetsManager;
-import org.lggl.graphics.Texture;
-import org.lggl.graphics.Window;
-import org.lggl.objects.GameObject;
-import org.lggl.input.Mouse;
+import org.powerhigh.graphics.Drawer;
+import org.powerhigh.graphics.Interface;
+import org.powerhigh.graphics.Texture;
+import org.powerhigh.input.Mouse;
+import org.powerhigh.objects.GameObject;
+import org.powerhigh.utils.Color;
 import org.xio.brickcraft.entity.Entity;
 import org.xio.brickcraft.world.Chunk;
 
@@ -38,12 +38,12 @@ public class WorldRenderer extends GameObject {
 	}
 
 	@Override
-	public void paint(Graphics g, Window source) {
+	public void paint(Drawer g, Interface source) {
 		int c = 0;
 		if (world.isRaining()) {
 			for (int x = 0; x < 1280/rain.getWidth(); x++) {
 				for (int y = -600; y < 1000/rain.getHeight(); y++) {
-					g.drawImage(rain.getAWTImage(), x*rain.getWidth(), y*rain.getHeight()+(offsetRain%200), null);
+					g.drawTexture(x*rain.getWidth(), y*rain.getHeight()+(offsetRain%200), rain);
 				}
 			}
 			offsetRain += 20;
@@ -60,7 +60,8 @@ public class WorldRenderer extends GameObject {
 		}
 		int cx = BrickCraft.getInstance().getCamera().getX() - TileManager.TILE_WIDTH;
 		int cy = BrickCraft.getInstance().getCamera().getY() - TileManager.TILE_HEIGHT;
-		g.drawImage(AssetsManager.getTexture("environment/sun").getAWTImage(), 128, 128, 128, 128, null);
+		g.drawTexture(128, 128, 128, 128, AssetsManager.getTexture("environment/sun"));
+		g.saveState();
 		g.translate(-BrickCraft.getInstance().getCamera().getX(), -BrickCraft.getInstance().getCamera().getY());
 		for (Chunk ch : world.chunks) {
 			for (int x = 0; x < 16; x++) {
@@ -93,10 +94,10 @@ public class WorldRenderer extends GameObject {
 		int sy = BrickCraft.getInstance().getCamera().getY() + ((Mouse.getY() / TileManager.TILE_HEIGHT) * TileManager.TILE_HEIGHT);
 		
 		g.setColor(Color.WHITE);
-		g.drawRect(sx, sy, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT);
+		//g.drawRect(sx, sy, TileManager.TILE_WIDTH, TileManager.TILE_HEIGHT);
 		
-		g.translate(BrickCraft.getInstance().getCamera().getX(), BrickCraft.getInstance().getCamera().getY());
-		
+		//g.translate(BrickCraft.getInstance().getCamera().getX(), BrickCraft.getInstance().getCamera().getY());
+		g.restoreState();
 	}
 
 }
